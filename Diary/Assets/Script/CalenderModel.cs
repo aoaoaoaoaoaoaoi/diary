@@ -2,13 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class CalenderModel
+namespace Diary
 {
-    private DateTime now;
-    public DateTime Now { get { return now; } set { now = value; } }
-
-    public CalenderModel()
+    public interface ICalenderModel
     {
+        DateTime Now { get; set; }
+    }
 
+    public class CalenderModel : ICalenderModel
+    {
+        private DateTime now;
+        public DateTime Now
+        {
+            get => now;
+            set => now = value;
+        }
+
+        public CalenderModel()
+        {
+            Now = DateTime.Now;
+        }
     }
 }
