@@ -1,18 +1,17 @@
+using NUnit.Framework;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.TestTools;
 
-public class Calender : MonoBehaviour
+namespace Tests
 {
-    // Start is called before the first frame update
-    void Start()
+    public class CalenderTest
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Testアトリビュートを付ける
+        [Test]
+        public void NowTest()
+        {
+            // 条件式がtrueだったら成功
+            Assert.That(1 < 10);
+        }
     }
 }

@@ -11,16 +11,22 @@ namespace Diary
 
     public class CalenderModel : ICalenderModel
     {
+        private static CalenderModel calenderModel = new CalenderModel();
+        public CalenderModel()
+        {
+            Now = DateTime.Now;
+        }
+
+        public static ICalenderModel GetInstance()
+        { 
+            return calenderModel;
+        }
+
         private DateTime now;
         public DateTime Now
         {
             get => now;
             set => now = value;
-        }
-
-        public CalenderModel()
-        {
-            Now = DateTime.Now;
         }
     }
 }

@@ -4,23 +4,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CalenderPresenter : MonoBehaviour
+namespace Diary
 {
-    [SerializeField] Text dateText;
-    [SerializeField] Button prevButton;
-    [SerializeField] Button nextButton;
-    [SerializeField] List<Button> dayButtons;
-   
-    // Start is called before the first frame update
-    void Start()
+    public class CalenderPresenter : MonoBehaviour
     {
-        var now = new DateTime().Date;
-        //dateText
-    }
+        [SerializeField] Text dateText;
+        [SerializeField] Button prevButton;
+        [SerializeField] Button nextButton;
+        [SerializeField] List<Button> dayButtons;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ICalenderModel calenderModel = CalenderModel.GetInstance();
+
+        // Start is called before the first frame update
+        void Start()
+        {
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
 }
