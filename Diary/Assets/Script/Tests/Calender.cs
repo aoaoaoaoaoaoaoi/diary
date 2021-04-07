@@ -2,8 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using UnityEngine.TestTools;
 using System;
-using Diary;
-
+using Model;
 
 namespace Tests
 {
