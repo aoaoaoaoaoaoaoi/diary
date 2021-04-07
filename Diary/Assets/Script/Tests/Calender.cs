@@ -1,6 +1,9 @@
 using NUnit.Framework;
 using System.Collections;
 using UnityEngine.TestTools;
+using System;
+using Diary;
+
 
 namespace Tests
 {
@@ -10,8 +13,8 @@ namespace Tests
         [Test]
         public void NowTest()
         {
-            // ğŒ®‚ªtrue‚¾‚Á‚½‚ç¬Œ÷
-            Assert.That(1 < 10);
+            //Œ»İ‚ÌŠÔ‚ª“ü‚Á‚Ä‚¢‚é‚±‚Æ
+            Assert.Equals(CalenderModel.GetInstance().Now, DateTime.Now); 
         }
     }
 }
