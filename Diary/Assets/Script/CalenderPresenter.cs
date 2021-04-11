@@ -9,17 +9,19 @@ namespace Presenter
 {
     public class CalenderPresenter : MonoBehaviour
     {
-        [SerializeField] Text dateText;
+        [SerializeField] ITextPrinter dateText;
         [SerializeField] Button prevButton;
         [SerializeField] Button nextButton;
         [SerializeField] List<Button> dayButtons;
 
-        ICalenderModel calenderModel = CalenderModel.GetInstance();
+        ICalenderModel calenderModel;
 
         // Start is called before the first frame update
         void Start()
         {
-            dateText.text = calenderModel.Now.ToString("F");
+            dateText.Text = calenderModel.Now.ToString("F");
+
+            calenderModel = new CalenderModel();
         }
 
         // Update is called once per frame

@@ -11,15 +11,9 @@ namespace Model
 
     public class CalenderModel : ICalenderModel
     {
-        private static CalenderModel calenderModel = new CalenderModel();
         public CalenderModel()
         {
             Now = DateTime.Now;
-        }
-
-        public static ICalenderModel GetInstance()
-        { 
-            return calenderModel;
         }
 
         private DateTime now;

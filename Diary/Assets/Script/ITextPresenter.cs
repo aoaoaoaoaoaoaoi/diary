@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Presenter
 {
-    public interface ITextPresenter
+    public interface ITextPrinter
     {
         string Text { get; set; }
     }
