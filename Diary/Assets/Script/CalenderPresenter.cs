@@ -9,7 +9,7 @@ namespace Presenter
 {
     public class CalenderPresenter : MonoBehaviour
     {
-        [SerializeField] ITextPrinter dateText;
+        ITextPrinter dateText;
         [SerializeField] Button prevButton;
         [SerializeField] Button nextButton;
         [SerializeField] List<Button> dayButtons;
@@ -19,6 +19,9 @@ namespace Presenter
         // Start is called before the first frame update
         void Start()
         {
+            dateText = GetComponent<ITextPrinter>();
+            Debug.Log(dateText);
+
             dateText.Text = calenderModel.Now.ToString("F");
 
             calenderModel = new CalenderModel();
