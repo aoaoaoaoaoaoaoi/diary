@@ -9,8 +9,7 @@ namespace Presenter
 {
     public class CalenderPresenter : MonoBehaviour
     {
-
-        [SerializeField] Button prevButton;
+        [SerializeReference, SubclassSelector(true)] IButtonPrinter prevButton;
         [SerializeField] Button nextButton;
         [SerializeField] List<Button> dayButtons;
 
