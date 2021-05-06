@@ -11,8 +11,9 @@ namespace Presenter
     {
         [SerializeReference, SubclassSelector] ITextPrinter dateText;
         [SerializeReference, SubclassSelector] IButtonPrinter prevButton;
-        [SerializeField] Button nextButton;
-        [SerializeField] List<Button> dayButtons;
+        [SerializeReference, SubclassSelector] IButtonPrinter nextButton;
+        [SerializeField] IButtonPrinter day;
+        //[SerializeReference, SubclassSelector] List<IButtonPrinter> dayButtons;
 
         ICalenderModel calenderModel;
 
@@ -21,6 +22,8 @@ namespace Presenter
         {
             calenderModel = new CalenderModel();
             dateText.Text = calenderModel.Now.ToString("F");
+
+            //var test = Instantiate(day);
         }
 
         // Update is called once per frame

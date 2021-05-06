@@ -8,7 +8,7 @@ using UnityEngine.UI;
 namespace View
 {
     [Serializable]
-    public class ButtonView : IButtonPrinter
+    public class ButtonMonoView : MonoBehaviour, IButtonPrinter 
     {
         [SerializeField] Button button;
         [SerializeField] Text text;
