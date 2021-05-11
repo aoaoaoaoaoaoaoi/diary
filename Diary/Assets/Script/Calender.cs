@@ -6,6 +6,7 @@ using View;
 
 namespace Presenter
 {
+    //TODO：インターフェースから操作できるようにする
     public class Calender : MonoBehaviour
     {
         [SerializeField] ButtonMonoView day;
@@ -23,6 +24,12 @@ namespace Presenter
                 buttonArray[i] = (Instantiate(day, transform) as IButtonPrinter); 
             }
             days = buttonArray;
+        }
+
+        //曜日を受け取って順番に番号を振る
+        public void RefreshDays()
+        {
+
         }
 
         // Update is called once per frame
