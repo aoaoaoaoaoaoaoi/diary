@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using Model;
 
 namespace Presenter
@@ -22,7 +21,6 @@ namespace Presenter
         {
             calenderModel = new CalenderModel();
             dateText.Text = calenderModel.Now.ToString("F");
-
             //var test = Instantiate(day);
         }
 

@@ -4016,49 +4016,6 @@ MonoBehaviour:
     id: 1
   nextButton:
     id: 2
-  dayButtons:
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
-  - id: 3
   references:
     version: 1
     00000000:
@@ -4075,8 +4032,6 @@ MonoBehaviour:
       data:
         button: {fileID: 4894406083711104787}
         text: {fileID: 7222637211986823427}
-    00000003:
-      type: {class: , ns: , asm: }
 --- !u!1 &5388141294592547609
 GameObject:
   m_ObjectHideFlags: 0
