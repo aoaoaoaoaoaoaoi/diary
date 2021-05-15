@@ -8,7 +8,7 @@ using UnityEngine.UI;
 namespace View
 {
     [Serializable]
-    public class ButtonMonoView : MonoBehaviour, IButtonPrinter 
+    public class ButtonMonoView : MonoBehaviour, IButtonMonoPrinter
     {
         [SerializeField] Button button;
         [SerializeField] Text text;
@@ -22,6 +22,16 @@ namespace View
         {
             get => text.text;
             set => text.text = value;
+        }
+
+        public void SetActive()
+        {
+            button.gameObject.SetActive(true);
+        }
+
+        public void SetInActive()
+        {
+            button.gameObject.SetActive(false);
         }
     }
 }

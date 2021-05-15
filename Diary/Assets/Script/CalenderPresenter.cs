@@ -20,7 +20,11 @@ namespace Presenter
         void Start()
         {
             calenderModel = new CalenderModel();
-            dateText.Text = calenderModel.Now.ToString("F");
+            var today = calenderModel.Now;
+            dateText.Text = today.ToString("F");
+
+ 
+
             //var test = Instantiate(day);
         }
 
