@@ -12,7 +12,10 @@ namespace Presenter
         [SerializeReference, SubclassSelector] IButtonPrinter prevButton;
         [SerializeReference, SubclassSelector] IButtonPrinter nextButton;
         [SerializeField] IButtonPrinter day;
-        //[SerializeReference, SubclassSelector] List<IButtonPrinter> dayButtons;
+
+        //’¼ÚŽg—p‚Í”ñ„§
+        [SerializeField] Calender calenderOnlyReference;
+        ICalender Calender => calenderOnlyReference;
 
         ICalenderModel calenderModel;
 
@@ -22,10 +25,7 @@ namespace Presenter
             calenderModel = new CalenderModel();
             var today = calenderModel.Now;
             dateText.Text = today.ToString("F");
-
- 
-
-            //var test = Instantiate(day);
+            Calender.RefreshDays(today);
         }
 
         // Update is called once per frame

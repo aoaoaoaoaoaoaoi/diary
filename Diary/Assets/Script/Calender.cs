@@ -16,7 +16,7 @@ namespace Presenter
     public class Calender : MonoBehaviour, ICalender
     {
         [SerializeField] ButtonMonoView day;
-        private IReadOnlyCollection<IButtonMonoPrinter> days;
+        private IReadOnlyList<IButtonMonoPrinter> days;
 
         //TODO:コンフィグファイルに移動
         private const int dayCount = 42;
@@ -36,12 +36,27 @@ namespace Presenter
         public void RefreshDays(DateTime today)
         {
             var firstDay = new DateTime(today.Year, today.Month, 1);
+            var lastDay = firstDay.AddMonths(1).AddDays(-1.0);
 
             //月の初めの曜日までActiveをfalseにする
-            for (int i=0; i < (int)firstDay.DayOfWeek; ++i)
+            for (int i = 0; i < (int)firstDay.DayOfWeek; ++i)
             {
-                //days[i].setIna
+                days[i].SetInActive();
             }
+            //月の数字を入力する
+            var firstIndex = (int)firstDay.DayOfWeek;
+            var lastIndex = firstIndex + (lastDay.Day - 1);
+            for (int i = firstIndex; i <= lastIndex; ++i)
+            {
+                days[i].Text = $"{i - firstIndex + 1}";
+            }
+            //月の終わりより後のActiveをfalseにする
+            for (int i = lastIndex + 1; i < days.Count; ++i)
+            {
+                days[i].SetInActive();
+            }
+
+
         }
 
         // Update is called once per frame
