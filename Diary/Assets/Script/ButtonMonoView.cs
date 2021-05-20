@@ -11,6 +11,7 @@ namespace View
     public class ButtonMonoView : MonoBehaviour, IButtonMonoPrinter
     {
         [SerializeField] Button button;
+        [SerializeField] Image buttonImage;
         [SerializeField] Text text;
 
         public void OnClick(Action action)
@@ -24,14 +25,18 @@ namespace View
             set => text.text = value;
         }
 
-        public void SetActive()
+        public void SetInEnable()
         {
-            button.gameObject.SetActive(true);
+            text.enabled = false;
+            button.enabled = false;
+            buttonImage.enabled = false;
         }
 
-        public void SetInActive()
+        public void SetEnable()
         {
-            button.gameObject.SetActive(false);
+            text.enabled = true;
+            button.enabled = true;
+            buttonImage.enabled = true;
         }
     }
 }

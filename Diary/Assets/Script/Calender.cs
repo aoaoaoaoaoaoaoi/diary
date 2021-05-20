@@ -41,7 +41,7 @@ namespace Presenter
             //Œ‚Ì‰‚ß‚Ì—j“ú‚Ü‚ÅActive‚ğfalse‚É‚·‚é
             for (int i = 0; i < (int)firstDay.DayOfWeek; ++i)
             {
-                days[i].SetInActive();
+                days[i].SetInEnable();
             }
             //Œ‚Ì”š‚ğ“ü—Í‚·‚é
             var firstIndex = (int)firstDay.DayOfWeek;
@@ -53,7 +53,7 @@ namespace Presenter
             //Œ‚ÌI‚í‚è‚æ‚èŒã‚ÌActive‚ğfalse‚É‚·‚é
             for (int i = lastIndex + 1; i < days.Count; ++i)
             {
-                days[i].SetInActive();
+                days[i].SetInEnable();
             }
 
 

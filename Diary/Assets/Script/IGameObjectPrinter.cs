@@ -6,7 +6,7 @@ namespace Presenter
 {
     public interface IGameObjectPrinter
     {
-        void SetActive();
-        void SetInActive();
+        void SetEnable();
+        void SetInEnable();
     }
 }

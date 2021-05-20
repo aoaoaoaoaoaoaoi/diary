@@ -214,4 +214,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 5808149162581018290}
+  buttonImage: {fileID: 5808149162581018293}
   text: {fileID: 5808149161981477144}
