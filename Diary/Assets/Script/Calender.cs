@@ -11,8 +11,7 @@ namespace Presenter
     {
         void RefreshDays(DateTime today);
     }
-
-    //TODO：インターフェースから操作できるようにする
+    
     public class Calender : MonoBehaviour, ICalender
     {
         [SerializeField] ButtonMonoView day;
@@ -35,6 +34,7 @@ namespace Presenter
         //曜日を受け取って順番に番号を振る
         public void RefreshDays(DateTime today)
         {
+            //TODO:年をまたぐときにバグるので修正
             var firstDay = new DateTime(today.Year, today.Month, 1);
             var lastDay = firstDay.AddMonths(1).AddDays(-1.0);
 

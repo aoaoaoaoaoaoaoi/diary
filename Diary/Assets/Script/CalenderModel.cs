@@ -6,21 +6,31 @@ namespace Model
 {
     public interface ICalenderModel
     {
-        DateTime Now { get; set; }
+        DateTime DesignatedDayTime { get; set; }
+        Action<DateTime> OnChangeDesignatedDayTime { set; }
     }
 
     public class CalenderModel : ICalenderModel
     {
         public CalenderModel()
         {
-            Now = DateTime.Now;
+            DesignatedDayTime = DateTime.Now;
         }
 
-        private DateTime now;
-        public DateTime Now
+        private DateTime designatedDayTime;
+        private Action<DateTime> onChangeDesignatedDayTime;
+        public Action<DateTime> OnChangeDesignatedDayTime
         {
-            get => now;
-            set => now = value;
+            set => onChangeDesignatedDayTime = value;
+        }
+        public DateTime DesignatedDayTime
+        {
+            get => designatedDayTime;
+            set
+            {
+                designatedDayTime = value;
+                onChangeDesignatedDayTime?.Invoke(value);
+            }
         }
     }
 }

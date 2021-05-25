@@ -17,15 +17,43 @@ namespace Presenter
         [SerializeField] Calender calenderOnlyReference;
         ICalender Calender => calenderOnlyReference;
 
-        ICalenderModel calenderModel;
-
         // Start is called before the first frame update
         void Start()
         {
-            calenderModel = new CalenderModel();
-            var today = calenderModel.Now;
-            dateText.Text = today.ToString("F");
-            Calender.RefreshDays(today);
+            ICalenderModel calenderModel = new CalenderModel();
+            var today = calenderModel.DesignatedDayTime;
+            Bind(calenderModel);
+            RefreshCalender(today);
+        }
+
+        private void Bind(ICalenderModel model)
+        {
+            model.OnChangeDesignatedDayTime = (date) =>
+            {
+                RefreshCalender(date);
+            };
+
+            prevButton.OnClick(()=> {
+                RefreshByAddMonth(model, -1);
+            });
+
+            nextButton.OnClick(() => {
+                RefreshByAddMonth(model, 1);
+            });
+        }
+
+        private void RefreshCalender(DateTime date)
+        {
+            dateText.Text = date.ToString("F");
+            Calender.RefreshDays(date);
+        }
+
+        private void RefreshByAddMonth(ICalenderModel model ,int add)
+        {
+            var date = model.DesignatedDayTime;
+            var firstDay = new DateTime(date.Year, date.Month, 1);
+            var newDay = firstDay.AddMonths(add);
+            model.DesignatedDayTime = newDay;
         }
 
         // Update is called once per frame
