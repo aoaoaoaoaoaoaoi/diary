@@ -11,6 +11,7 @@ namespace Presenter
         [SerializeReference, SubclassSelector] ITextPrinter dateText;
         [SerializeReference, SubclassSelector] IButtonPrinter prevButton;
         [SerializeReference, SubclassSelector] IButtonPrinter nextButton;
+        [SerializeReference, SubclassSelector] IButtonPrinter todayButton;
         [SerializeField] IButtonPrinter day;
 
         //’¼ÚŽg—p‚Í”ñ„§
@@ -39,6 +40,10 @@ namespace Presenter
 
             nextButton.OnClick(() => {
                 RefreshByAddMonth(model, 1);
+            });
+
+            todayButton.OnClick(() => {
+                model.DesignatedDayTime = DateTime.Now;
             });
         }
 

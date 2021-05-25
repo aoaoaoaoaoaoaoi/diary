@@ -34,7 +34,6 @@ namespace Presenter
         //—j“ú‚ğó‚¯æ‚Á‚Ä‡”Ô‚É”Ô†‚ğU‚é
         public void RefreshDays(DateTime today)
         {
-            //TODO:”N‚ğ‚Ü‚½‚®‚Æ‚«‚ÉƒoƒO‚é‚Ì‚ÅC³
             var firstDay = new DateTime(today.Year, today.Month, 1);
             var lastDay = firstDay.AddMonths(1).AddDays(-1.0);
 
@@ -48,6 +47,7 @@ namespace Presenter
             var lastIndex = firstIndex + (lastDay.Day - 1);
             for (int i = firstIndex; i <= lastIndex; ++i)
             {
+                days[i].SetEnable();
                 days[i].Text = $"{i - firstIndex + 1}";
             }
             //Œ‚ÌI‚í‚è‚æ‚èŒã‚ÌActive‚ğfalse‚É‚·‚é
