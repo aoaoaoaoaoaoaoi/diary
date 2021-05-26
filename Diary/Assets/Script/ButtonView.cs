@@ -18,6 +18,11 @@ namespace View
             button.onClick.AddListener(() => action?.Invoke());
         }
 
+        public void RemoveListener()
+        {
+            //button.onClick.RemveListener(() => action?.Invoke());
+        }
+
         public string Text
         {
             get => text.text;

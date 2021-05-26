@@ -55,8 +55,6 @@ namespace Presenter
             {
                 days[i].SetInEnable();
             }
-
-
         }
 
         // Update is called once per frame
