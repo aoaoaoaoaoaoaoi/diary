@@ -659,7 +659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.0000060415578}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3662421910661439906
@@ -809,7 +809,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1427803702101231493}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9895798
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1439,6 +1439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78dcd340aaa5ac741a8c25330f893ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dateRect: {fileID: 5388141295520308803}
+  diaryRect: {fileID: 4044893566009567613}
   dateText:
     id: 0
   prevButton:

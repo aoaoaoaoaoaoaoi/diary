@@ -10,6 +10,8 @@ namespace Presenter
     interface ICalender
     {
         void RefreshDays(DateTime today);
+        void Initialize(Action onClick, DateTime today);
+        Vector2 Position { get; set; }
     }
     
     public class Calender : MonoBehaviour, ICalender
@@ -17,18 +19,32 @@ namespace Presenter
         [SerializeField] ButtonMonoView day;
         private IReadOnlyList<IButtonMonoPrinter> days;
 
+        private RectTransform rectTransform;
+        public Vector2 Position
+        {
+            get => rectTransform.anchoredPosition;
+            set => rectTransform.anchoredPosition = value;
+        }
+
         //TODO:コンフィグファイルに移動
         private const int dayCount = 42;
 
         // Start is called before the first frame update
         void Start()
         {
+        }
+
+        public void Initialize(Action onClick, DateTime today)
+        {
+            rectTransform = this.gameObject.GetComponent<RectTransform>();
             var buttonArray = new IButtonMonoPrinter[dayCount];
-            for (int i=0;i<dayCount;++i)
+            for (int i = 0; i < dayCount; ++i)
             {
-                buttonArray[i] = (Instantiate(day, transform) as IButtonMonoPrinter); 
+                buttonArray[i] = (Instantiate(day, transform) as IButtonMonoPrinter);
+                buttonArray[i].OnClick(onClick);
             }
             days = buttonArray;
+            RefreshDays(today);
         }
 
         //曜日を受け取って順番に番号を振る

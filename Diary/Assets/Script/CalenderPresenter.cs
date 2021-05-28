@@ -8,6 +8,9 @@ namespace Presenter
 {
     public class CalenderPresenter : MonoBehaviour
     {
+        //TODO:インターフェースにする
+        [SerializeField] RectTransform dateRect;
+        [SerializeField] RectTransform diaryRect;
         [SerializeReference, SubclassSelector] ITextPrinter dateText;
         [SerializeReference, SubclassSelector] IButtonPrinter prevButton;
         [SerializeReference, SubclassSelector] IButtonPrinter nextButton;
@@ -24,7 +27,12 @@ namespace Presenter
             ICalenderModel calenderModel = new CalenderModel();
             var today = calenderModel.DesignatedDayTime;
             Bind(calenderModel);
-            RefreshCalender(today);
+            dateText.Text = today.ToString("F");
+            Calender.Initialize(()=> {
+                //TODO:イージングをかける
+                dateRect.anchoredPosition = dateRect.anchoredPosition + new Vector2(0, 80);
+                diaryRect.anchoredPosition = diaryRect.anchoredPosition + new Vector2(0,950);
+            }, today);
         }
 
         private void Bind(ICalenderModel model)
